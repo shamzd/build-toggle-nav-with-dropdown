@@ -1,152 +1,107 @@
 body {
     background-color: #818cf8;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='%23f1f5f9' fill-opacity='0.26'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
+    font-family: effra,sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
-.flex-container {
+.flex-container{
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
     align-items: center;
 }
 
-.inner-container {
+.inner-container{
     padding: 0 1rem;
 }
 
-/* typography */
+/* ************************Global Typography************************ */
 
-h1 {
-    color: #dc2626;
+h1{
     font-size: 1.125rem;
-    line-height: 60px;
-    text-align: center;
+    line-height: 3.75rem;
 }
 
-h1 a {
-    color: #dc2626;
+h2{
+    font-family: effra,sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
-h2 {
-    color: #f8fafc;
-    font-size: 28px;
-    text-align: center;
-}
 
-/* header */
+/* *****************************Header***********************  */
 
-header {
+header{
     background-color: #f8fafc;
+    
 }
 
-header a:first-of-type {
-    font-size: 14px;
-    text-decoration: none;
-    color: #475569;
-}
-
-button {
+button{
     background-color: #f8fafc;
     border: none;
 }
 
-button svg {
-    width: 20px;
-    fill: #475569;
+svg{
+    width: 1.25rem;
 }
 
-nav {
-    /* flex: 1 0 100%; */
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #f8fafc;
-    width: 98vw;
-    visibility: hidden;
-    opacity: 0;
+header a{
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.875rem;
 }
 
-.active-nav {
-    visibility: visible;
-    opacity: 1;
+h1 a{
+    color: #dc2626;
 }
 
-.menu svg {
-    width: 10px;
-    stroke: #475569;
+nav{
+    flex: 1 0 100%;
 }
 
-.menu a {
+.menu li{
+    line-height: 3.125rem;
+}
+
+.menu a{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 0.5rem;
 }
 
-.menu li {
-    line-height: 50px;
-}
-
-.menu li a:hover {
+.menu a:hover{
     background-color: #e2e8f0;
-    color: #818cf8;
 }
 
-.submenu li {
-    border-bottom: 1px solid #cbd5e1;
+.menu svg{
+    width: 10px;
 }
 
-.submenu {
-    max-height: 0;
+.submenu{
     visibility: hidden;
     opacity: 0;
     overflow: hidden;
+    max-height: 0;
 }
 
-/* what do you hover over? --> first selector with 
-:hover what do you want to change --> second slector */
-.menu li:hover > .submenu {
-    max-height: 240px;
+/* what do you hover over? -- first selector + :hover */
+/* what do you want to change? --> second selector */
+
+.menu li:hover > .submenu{
     visibility: visible;
     opacity: 1;
+    overflow: visible;
+    max-height: 14.0625rem;
 }
 
-.menu li:focus-within > ul,
-.menu li > ul:focus {
-    max-height: 240px;
-    visibility: visible;
-    opacity: 1;
-    display: block;
-}
+/* this works to an extent but its hover state has its limitations. A better way to develop a dropdown is with JS */
 
-section {
-    padding: 50px 0;
-}
-
-@media only screen and (min-width: 1100px) {
-    .inner-container {
+@media screen and (min-width: 1100px) {
+    .inner-container{
         padding: 0;
-        max-width: 1100px;
+        width: 1000px;
         margin: 0 auto;
-    }
-
-    nav {
-        position: static;
-        width: auto;
-        visibility: visible;
-        opacity: 1;
-    }
-
-    .flex-container > a {
-        order: 1;
-    }
-
-    .menu-icon {
-        display: none;
-    }
-
-    .menu {
-        display: flex;
-        gap: 1rem;
     }
 }
